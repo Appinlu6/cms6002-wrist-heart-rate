@@ -9,7 +9,7 @@ window.CMS_SLIDES = [
       "The Hong Kong Polytechnic University · 22 November 2026"
     ],
     "notes": [],
-    "image": "assets/slides/slide-01.webp"
+    "image": "assets/slides/slide-01.webp?v=347a4e675ed1"
   },
   {
     "title": "Heart rate from wrist motion, checked against ECG",
@@ -22,7 +22,7 @@ window.CMS_SLIDES = [
       "Explore what wrist motion can reveal about the ECG waveform. Secondary analysis: generated against recorded ECG at three levels: heart rate, beat timing and waveform shape."
     ],
     "notes": [],
-    "image": "assets/slides/slide-02.webp"
+    "image": "assets/slides/slide-02.webp?v=23d75eacf602"
   },
   {
     "title": "Two clues in wrist motion, and what is still missing",
@@ -34,7 +34,7 @@ window.CMS_SLIDES = [
       "Gap: Sleep, activity and transitions observed repeatedly in the same person, with raw IMU, PPG and ECG together."
     ],
     "notes": [],
-    "image": "assets/slides/slide-03.webp"
+    "image": "assets/slides/slide-03.webp?v=2eeb21453a35"
   },
   {
     "title": "One main question, three research questions",
@@ -45,7 +45,7 @@ window.CMS_SLIDES = [
       "RQ3. ECG generation. How closely does an end-to-end model that takes wrist motion as input reproduce ECG heart rate, beat timing and waveform shape? In which states can it locate individual beats, and in which only the overall heart rate? Methodology 4.5 · secondary."
     ],
     "notes": [],
-    "image": "assets/slides/slide-04.webp"
+    "image": "assets/slides/slide-04.webp?v=482108f2d2ea"
   },
   {
     "title": "Data collection: about 100 people, ten days each",
@@ -69,7 +69,7 @@ window.CMS_SLIDES = [
       "Set ECG quality and timing limits in week 8. Start analysis in week 19. Deliver results in week 24."
     ],
     "notes": [],
-    "image": "assets/slides/slide-05.webp"
+    "image": "assets/slides/slide-05.webp?v=f111ba0ab338"
   },
   {
     "title": "Reference heart rate and activity states",
@@ -81,20 +81,17 @@ window.CMS_SLIDES = [
       "REPORTED FOR EVERY STATE. Participants, share of usable windows, and error. If many high-activity windows fail the ECG check, a low error in the rest says little."
     ],
     "notes": [],
-    "image": "assets/slides/slide-06.webp"
+    "image": "assets/slides/slide-06.webp?v=8d1fe7e1421f"
   },
   {
     "title": "Handcrafted features and the feature-writing agent",
     "text": [
-      "The study records about 100 people for ten days each. Wrist acceleration is the model input, wrist PPG is an optical comparison, and chest ECG gives the reference heart rate.",
-      "Left: split by participant. Keep all ten days for each person in the same group. Five folds rotate which participant group is held out.",
-      "Middle: develop features using four groups. The agent sees the task, data format and training summaries, then writes Python code. The code runs locally. Validation error and code errors are returned for up to ten rounds. Code is selected before testing. The agent sees no raw signals or test data.",
-      "Right: test on the held-out group using the same ten-second windows. The main experiment compares H with H plus A0 using ridge regression and per-person mean absolute error in beats per minute. The secondary analysis compares heart rate from generated ECG with direct heart rate prediction.",
-      "H examples. Step rate and recent activity.",
-      "A0 vs. A1. A0 uses standard instructions. A1 adds a fixed note on physiology."
+      "Handcrafted set (H). Movement intensity: mean and quantiles of ENMO in the current window and over the previous 1, 5 and 10 minutes. Step rate and time spent at the current activity level. At rest: a peak in the acceleration spectrum within the heartbeat band, 0.7–2.5 Hz. Defined on public data and during the pilot. Same ridge regression for H and for the agent's features. Regularisation is chosen on training participants only.",
+      "Agent loop, up to ten rounds. 1. Agent receives: task, data format, training summaries. 2. Agent writes Python: feature-extraction code. 3. Code runs locally: features for the regression model. 4. Feedback to the agent: validation error and code error messages. No raw signal segments. Nothing from test participants.",
+      "Settings. A0: standard task instructions. A1: adds a fixed physiology note. No features, bands or window lengths. Models: Claude Sonnet 5.5 as primary; gpt-oss-20b, run locally, repeats the main test. Folds: five, split by participant. Three independent runs per fold. Selection: code chosen by inner validation before testing."
     ],
     "notes": [],
-    "image": "assets/slides/slide-07.webp"
+    "image": "assets/slides/slide-07.webp?v=0b11b15441b3"
   },
   {
     "title": "Main test: does H + A0 beat H in new participants?",
@@ -105,7 +102,7 @@ window.CMS_SLIDES = [
       "WHERE DOES A GAIN COME FROM?. Two researchers sort each agent feature into five groups; agreement by Cohen's kappa. Remove one group and repeat on the same windows. Also reported: variation across runs, API cost, rounds and time."
     ],
     "notes": [],
-    "image": "assets/slides/slide-08.webp"
+    "image": "assets/slides/slide-08.webp?v=593636fd689e"
   },
   {
     "title": "Secondary analysis: generating ECG from wrist motion",
@@ -118,7 +115,7 @@ window.CMS_SLIDES = [
       "Fallback. If the pilot cannot confirm timing accuracy: window-level heart rate only, no claims about individual beats."
     ],
     "notes": [],
-    "image": "assets/slides/slide-09.webp"
+    "image": "assets/slides/slide-09.webp?v=c00cb6981ab2"
   },
   {
     "title": "What the project would contribute",
@@ -129,7 +126,7 @@ window.CMS_SLIDES = [
       "Limit. Even with many recording windows, the number of participants limits what we can say about new users."
     ],
     "notes": [],
-    "image": "assets/slides/slide-10.webp"
+    "image": "assets/slides/slide-10.webp?v=a8dee50afdcd"
   },
   {
     "title": "Thank you",
@@ -139,6 +136,6 @@ window.CMS_SLIDES = [
       "Wrist Acceleration and Heart Rate in Daily Life · CMS6002 Research Proposal"
     ],
     "notes": [],
-    "image": "assets/slides/slide-11.webp"
+    "image": "assets/slides/slide-11.webp?v=ca66201f6b5a"
   }
 ];
