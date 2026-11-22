@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f3">
+  <meta name="description" content="A CMS6002 research proposal on wrist acceleration, heart rate and agent-generated features.">
+  <title>Wrist acceleration and heart rate · CMS6002</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./assets/slides-data.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="course"><strong>CMS6002</strong><span>Frontiers of Artificial Intelligence</span></div>
+      <nav aria-label="Presentation options">
+        <button class="tool" id="index-open" type="button" aria-haspopup="dialog" title="Open slide index (I)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg>
+          <span>Slide index</span>
+        </button>
+        <button class="tool primary" id="present" type="button" title="Start presentation (F)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg>
+          <span>Present</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="deck" aria-label="Research proposal presentation">
+    <h1 class="sr-only">Wrist acceleration and heart rate in daily life</h1>
+    <div class="stage" id="stage" tabindex="-1" role="group" aria-label="Current slide">
+      <img id="slide-image" alt="" draggable="false">
+      <button id="exit-presentation" type="button" class="projection-exit" hidden>Exit presentation</button>
+    </div>
+    <div class="deck-controls">
+      <div class="pager" role="group" aria-label="Change slide">
+        <button type="button" id="previous" class="step" aria-label="Previous slide" title="Previous slide (left arrow)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5.5-6.5 6.5 6.5 6.5"/></svg>
+        </button>
+        <span id="page" aria-hidden="true"></span>
+        <button type="button" id="next" class="step" aria-label="Next slide" title="Next slide (right arrow)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg>
+        </button>
+      </div>
+      <div class="readers" role="group" aria-label="Read slide details">
+        <button id="show-text" type="button" class="tool" aria-expanded="false" aria-controls="read-panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span>Slide text</span>
+        </button>
+      </div>
+    </div>
+    <section id="read-panel" class="read-panel" aria-labelledby="panel-title" hidden>
+      <h2 id="panel-title"></h2>
+      <div id="panel-content"></div>
+    </section>
+    <div class="sr-only" id="announce" aria-live="polite" aria-atomic="true"></div>
+    <noscript>Please enable JavaScript to view this presentation.</noscript>
+  </main>
+  <dialog id="slide-index" aria-labelledby="index-title">
+    <div class="dialog-bar">
+      <h2 id="index-title">Slide index</h2>
+      <button id="index-close" class="step" type="button" aria-label="Close slide index">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div id="index-grid"></div>
+  </dialog>
+</body>
+</html>
